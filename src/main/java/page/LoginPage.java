@@ -5,12 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage {
-
     private WebDriver driver;
     private By usernameInput = By.name("UserName");
     private  By passwordInput = By.name("Password");
     private By loginButton = By.id("btnLogin");
     private  By scLinkInput = By.id("MISAPanel-1083-innerCt");
+    private By branchCombobox = By.xpath("//*[contains(@class, 'misa-div branch-name')]");
+    private By searchBranchBox = By.xpath("//*[contains(@placeholder, 'Tìm kiếm chi nhánh')]");
+    private By firsBranch = By.xpath("//html/body/div[4]/div/div/div/div[1]");
     public LoginPage(WebDriver driver){
         this.driver= driver;
     }
@@ -33,6 +35,14 @@ public class LoginPage {
         WebElement scLink = driver.findElement(scLinkInput);
         if (scLink.isDisplayed())
             scLink.click();
+    }
+    public void enterBanchName(String branchName){
+        WebElement branchNameBox = driver.findElement(branchCombobox);
+        branchNameBox.sendKeys(branchName);
+    }
+    public void selectBranch(){
+        WebElement branchResult = driver.findElement(firsBranch);
+        branchResult.click();
     }
     // Hàm lấy ra tên trang login
     public String getTitel(){
@@ -58,4 +68,10 @@ public class LoginPage {
         String expectedHomePageTitle = "MISA eShop";
         return getTitel().contains(expectedHomePageTitle);
     }
+    // Hàm chọn chi nhánh
+    public void chooseBranch(){
+        String branchName = "ntyen";
+
+    }
+
 }

@@ -15,11 +15,14 @@ public class Login extends InitChromeDriver {
         Assert.assertTrue(loginPage.verifySigninPageTitle(), "Khong mở được trang login"); // Kiểm tra mở trang login thành công hay thất bại
         System.out.println("Mở trang Login thành công");
         // Thực hiện login
+
         try {
             loginPage.signIn("ntyen", "12345678@Abc");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+             } catch (Exception e) {
+
+                 throw new RuntimeException(e);
+             }
+
         // Kiểm tra login thành công hay thất bại
         System.out.printf(loginPage.getTitel());
         System.out.println("Trạng thái mở trang chủ: " +loginPage.verifyHomePageTitel()); // in trạng thái  mở trang chủ

@@ -9,7 +9,7 @@ public class LoginPage {
     private By usernameInput = By.name("UserName");
     private  By passwordInput = By.name("Password");
     private By loginButton = By.id("btnLogin");
-    private  By scLinkInput = By.id("MISAPanel-1083-innerCt");
+    private  By scLinkInput = By.id("MISAPanel-1085-innerCt");
     private By branchCombobox = By.xpath("//*[contains(@class, 'misa-div branch-name')]");
     private By searchBranchBox = By.xpath("//*[contains(@placeholder, 'Tìm kiếm chi nhánh')]");
     private By firsBranch = By.xpath("//html/body/div[4]/div/div/div/div[1]");

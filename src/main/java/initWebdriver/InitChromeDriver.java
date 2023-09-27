@@ -22,7 +22,7 @@ public class InitChromeDriver {
         System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
-        this.driver.get("https://misast.mshopkeeper.vn/");
+        this.driver.get("https://bsaturday.mshopkeeper.vn/");
         this.driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }

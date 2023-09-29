@@ -8,6 +8,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+import static Common.Common.CONFIG_DRIVER_CHROME;
+import static Common.Common.URL_SRC_CHROME;
+
 public class InitChromeDriver {
 
     WebDriver driver;
@@ -18,8 +21,8 @@ public class InitChromeDriver {
     @BeforeTest
     public void setUp() { //ulatroi lopws con chi nhan access modifier = protected  vaf public
         System.out.println("Mo trinh duyet...");
-        //System.setProperty(CONFIG_DRIVER_CHROME, URL_SRC_CHROME);
-        System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
+        System.setProperty(CONFIG_DRIVER_CHROME, URL_SRC_CHROME);
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
         this.driver.get("https://bsaturday.mshopkeeper.vn/");
